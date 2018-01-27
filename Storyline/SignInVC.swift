@@ -42,9 +42,21 @@ class SignInVC: UIViewController, FUIAuthDelegate {
     
     @objc func getIn(){
         let auth = FUIAuth.defaultAuthUI()?.providers.first as! FUIGoogleAuth
-        auth.signIn(withDefaultValue: "", presenting: self) { (authCredential, error, result) in
-            //
+        auth.signIn(withDefaultValue: "", presenting: self, completion: nil)
+    }
+    
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        if (error != nil){
+            print("cannot log in")
+            return
         }
+        
+        guard let user = authDataResult?.user else {
+            return
+        }
+        
+        
+        
     }
 
 }
