@@ -9,27 +9,30 @@
 /* Begin PBXBuildFile section */
 		894ED18F201CFD2E00506699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED18E201CFD2E00506699 /* AppDelegate.swift */; };
 		894ED191201CFD2E00506699 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED190201CFD2E00506699 /* SignInVC.swift */; };
-		894ED194201CFD2E00506699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894ED192201CFD2E00506699 /* Main.storyboard */; };
 		894ED197201CFD2E00506699 /* Storyline.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 894ED195201CFD2E00506699 /* Storyline.xcdatamodeld */; };
 		894ED199201CFD2E00506699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 894ED198201CFD2E00506699 /* Assets.xcassets */; };
 		894ED19C201CFD2E00506699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894ED19A201CFD2E00506699 /* LaunchScreen.storyboard */; };
 		894ED1A4201CFD6400506699 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 894ED1A3201CFD6400506699 /* GoogleService-Info.plist */; };
 		894ED1A6201D079100506699 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED1A5201D079100506699 /* Global.swift */; };
+		894ED1A8201D23A300506699 /* UserStoryline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED1A7201D23A300506699 /* UserStoryline.swift */; };
 		92C4DDBB201D01F600D74854 /* StoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4DDBA201D01F600D74854 /* StoriesVC.swift */; };
 		92C4DDBD201D0B2E00D74854 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */; };
 		9AD96357E510E338FDDD512F /* Pods_Storyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828C8FC55BD0BC26BF7365F4 /* Pods_Storyline.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
 		828C8FC55BD0BC26BF7365F4 /* Pods_Storyline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Storyline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A97123DE54BD2DE57A57B3 /* Pods-Storyline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storyline.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Storyline/Pods-Storyline.debug.xcconfig"; sourceTree = "<group>"; };
 		894ED18B201CFD2E00506699 /* Storyline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storyline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		894ED18E201CFD2E00506699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		894ED190201CFD2E00506699 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		894ED193201CFD2E00506699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		894ED196201CFD2E00506699 /* Storyline.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Storyline.xcdatamodel; sourceTree = "<group>"; };
 		894ED198201CFD2E00506699 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		894ED19B201CFD2E00506699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		894ED19D201CFD2E00506699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		894ED1A3201CFD6400506699 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		894ED1A5201D079100506699 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		894ED1A7201D23A300506699 /* UserStoryline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStoryline.swift; sourceTree = "<group>"; };
 		92C4DDBA201D01F600D74854 /* StoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesVC.swift; sourceTree = "<group>"; };
 		92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F90DCC76436E3CCFFE1E385F /* Pods-Storyline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storyline.release.xcconfig"; path = "Pods/Target Support Files/Pods-Storyline/Pods-Storyline.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,10 +72,9 @@
 			isa = PBXGroup;
 			children = (
 				894ED18E201CFD2E00506699 /* AppDelegate.swift */,
-				894ED1A5201D079100506699 /* Global.swift */,
-				894ED190201CFD2E00506699 /* SignInVC.swift */,
-				92C4DDBA201D01F600D74854 /* StoriesVC.swift */,
-				92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */,
+				894ED1A9201D23EE00506699 /* Model */,
+				894ED1AA201D23FB00506699 /* View */,
+				894ED1AB201D240A00506699 /* Controller */,
 				894ED1A3201CFD6400506699 /* GoogleService-Info.plist */,
 				894ED198201CFD2E00506699 /* Assets.xcassets */,
 				894ED19A201CFD2E00506699 /* LaunchScreen.storyboard */,
@@ -80,6 +82,32 @@
 				894ED195201CFD2E00506699 /* Storyline.xcdatamodeld */,
 			);
 			path = Storyline;
+			sourceTree = "<group>";
+		};
+		894ED1A9201D23EE00506699 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				894ED1A7201D23A300506699 /* UserStoryline.swift */,
+				894ED1A5201D079100506699 /* Global.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		894ED1AA201D23FB00506699 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		894ED1AB201D240A00506699 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				894ED190201CFD2E00506699 /* SignInVC.swift */,
+				92C4DDBA201D01F600D74854 /* StoriesVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B3214FC4D6887C3C3DA5A9AB /* Pods */ = {
@@ -243,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				894ED1A8201D23A300506699 /* UserStoryline.swift in Sources */,
 				894ED1A6201D079100506699 /* Global.swift in Sources */,
 				92C4DDBD201D0B2E00D74854 /* StoryCollectionViewCell.swift in Sources */,
 				894ED197201CFD2E00506699 /* Storyline.xcdatamodeld in Sources */,
