@@ -18,6 +18,8 @@ class ProfileVC: UIViewController {
         
         self.ProfileImg.layer.cornerRadius = self.ProfileImg.frame.size.width/2;
         self.ProfileImg.clipsToBounds = true
+        ProfileName.text = "Shameiz Rangwala"
+        ProfileName.borderStyle = UITextBorderStyle.none
         // Do any additional setup after loading the view.
     }
 
