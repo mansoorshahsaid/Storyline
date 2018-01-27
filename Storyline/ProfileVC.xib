@@ -35,19 +35,30 @@
                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Hh-hD-nf3">
-                    <rect key="frame" x="16" y="308" width="343" height="489"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Hh-hD-nf3">
+                    <rect key="frame" x="0.0" y="308" width="375" height="504"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="FgB-81-gh4">
+                    <rect key="frame" x="0.0" y="308" width="375" height="77"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FgB-81-gh4" id="uyO-SM-ytB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="76.666666666666671"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tableViewCellContentView>
+                </tableViewCell>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="pNS-xZ-OhM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="62" id="ICX-2F-tuR"/>
                 <constraint firstItem="MC0-gH-Ler" firstAttribute="top" secondItem="pNS-xZ-OhM" secondAttribute="bottom" constant="32" id="PSg-ev-RyF"/>
                 <constraint firstItem="MC0-gH-Ler" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TAi-2i-YBs"/>
+                <constraint firstItem="2Hh-hD-nf3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UKe-TD-R1y"/>
+                <constraint firstAttribute="bottom" secondItem="2Hh-hD-nf3" secondAttribute="bottom" id="bIl-ma-Hdt"/>
                 <constraint firstItem="pNS-xZ-OhM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="62" id="hvG-tB-USg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2Hh-hD-nf3" secondAttribute="trailing" id="iUW-bf-7L3"/>
                 <constraint firstItem="pNS-xZ-OhM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jSi-8Z-fZf"/>
+                <constraint firstItem="2Hh-hD-nf3" firstAttribute="top" secondItem="MC0-gH-Ler" secondAttribute="bottom" constant="21" id="mKa-UW-6eq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="34.5" y="83"/>
