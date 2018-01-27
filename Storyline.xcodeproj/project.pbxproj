@@ -16,6 +16,7 @@
 		894ED1A4201CFD6400506699 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 894ED1A3201CFD6400506699 /* GoogleService-Info.plist */; };
 		894ED1A6201D079100506699 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED1A5201D079100506699 /* Global.swift */; };
 		92C4DDBB201D01F600D74854 /* StoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4DDBA201D01F600D74854 /* StoriesVC.swift */; };
+		92C4DDBD201D0B2E00D74854 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */; };
 		9AD96357E510E338FDDD512F /* Pods_Storyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828C8FC55BD0BC26BF7365F4 /* Pods_Storyline.framework */; };
 		828C8FC55BD0BC26BF7365F4 /* Pods_Storyline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Storyline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A97123DE54BD2DE57A57B3 /* Pods-Storyline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storyline.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Storyline/Pods-Storyline.debug.xcconfig"; sourceTree = "<group>"; };
@@ -30,6 +31,7 @@
 		894ED1A3201CFD6400506699 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		894ED1A5201D079100506699 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		92C4DDBA201D01F600D74854 /* StoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesVC.swift; sourceTree = "<group>"; };
+		92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F90DCC76436E3CCFFE1E385F /* Pods-Storyline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storyline.release.xcconfig"; path = "Pods/Target Support Files/Pods-Storyline/Pods-Storyline.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 				894ED1A5201D079100506699 /* Global.swift */,
 				894ED190201CFD2E00506699 /* SignInVC.swift */,
 				92C4DDBA201D01F600D74854 /* StoriesVC.swift */,
+				92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */,
 				894ED1A3201CFD6400506699 /* GoogleService-Info.plist */,
 				894ED198201CFD2E00506699 /* Assets.xcassets */,
 				894ED19A201CFD2E00506699 /* LaunchScreen.storyboard */,
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				894ED1A6201D079100506699 /* Global.swift in Sources */,
+				92C4DDBD201D0B2E00D74854 /* StoryCollectionViewCell.swift in Sources */,
 				894ED197201CFD2E00506699 /* Storyline.xcdatamodeld in Sources */,
 				894ED191201CFD2E00506699 /* SignInVC.swift in Sources */,
 				92C4DDBB201D01F600D74854 /* StoriesVC.swift in Sources */,

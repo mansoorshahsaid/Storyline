@@ -10,22 +10,26 @@ import UIKit
 
 class StoriesVC: UIViewController {
     
-    fileprivate static let storyCellIdentifier = "storyCell"
+    fileprivate let storyCellIdentifier = "storyCell"
 
     fileprivate let storiesCollectionView: UICollectionView = {
-        let scv = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
-        scv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: storyCellIdentifier)
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        let scv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        scv.translatesAutoresizingMaskIntoConstraints = false
         scv.backgroundColor = .yellow
         return scv
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello")
+        
+        storiesCollectionView.register(StoryCollectionViewCell.self, forCellWithReuseIdentifier: storyCellIdentifier)
+        storiesCollectionView.delegate = self
+        storiesCollectionView.dataSource = self
         
         setupSubviews()
-        storiesCollectionView.layoutIfNeeded()
-        print (storiesCollectionView.frame)
     }
     
     fileprivate func setupSubviews() {
@@ -46,8 +50,7 @@ extension StoriesVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoriesVC.storyCellIdentifier, for: indexPath)
-        cell.backgroundColor = .gray
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: storyCellIdentifier, for: indexPath) as! StoryCollectionViewCell
         return cell
     }
     
@@ -56,4 +59,10 @@ extension StoriesVC: UICollectionViewDataSource {
 
 extension StoriesVC: UICollectionViewDelegate {
     
+}
+
+extension StoriesVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 100)
+    }
 }
