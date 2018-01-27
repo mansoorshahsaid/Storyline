@@ -8,6 +8,7 @@ target 'Storyline' do
   pod 'Firebase/Core'
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Google'
+  pod 'Firebase/Database'
 
   # Pods for Storyline
 
