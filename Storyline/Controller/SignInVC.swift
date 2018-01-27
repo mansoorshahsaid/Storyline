@@ -19,7 +19,7 @@ class SignInVC: UIViewController, FUIAuthDelegate {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = mainColor
         view.setTitle("Get in", for: .normal)
-        view.setTitleColor(UIColor.black, for: .normal)
+        view.setTitleColor(UIColor.white, for: .normal)
         view.addTarget(self, action: #selector(getIn), for: .touchUpInside)
         return view
     }()
@@ -87,7 +87,7 @@ class SignInVC: UIViewController, FUIAuthDelegate {
             print(error.localizedDescription)
         }
         
-        self.navigationController?.present(StoriesVC(), animated: true, completion: nil)
+        self.present(UINavigationController(rootViewController: StoriesVC()), animated: true, completion: nil)
         
         
         
