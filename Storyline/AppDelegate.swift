@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
 
-        window?.rootViewController = UINavigationController(rootViewController: StoriesVC())
+        window?.rootViewController = UINavigationController(rootViewController: SignInVC())
         window?.makeKeyAndVisible()
         return true
     }
