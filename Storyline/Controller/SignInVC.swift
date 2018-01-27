@@ -79,6 +79,7 @@ class SignInVC: UIViewController, FUIAuthDelegate {
                 currentUserStoryline = UserStoryline(uid: uid, imageUrl: photoURL, name: name, storiesCount: storiesCount, upVoteCount: upVoteCount)
             } else {
                 self.ref.child("users").child(user.uid).setValue(["uid":uid, "name":name, "photoURL":photoURL, "storiesCount": storiesCount, "upVoteCount":upVoteCount])
+                currentUserStoryline = UserStoryline(uid: uid, imageUrl: photoURL, name: name, storiesCount: storiesCount, upVoteCount: upVoteCount)
             }
             
             // ...
