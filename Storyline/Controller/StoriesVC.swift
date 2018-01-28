@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Foundation
 
 class StoriesVC: UIViewController {
     
     fileprivate let storyCellIdentifier = "storyCell"
-
+    var addStoryButton: UIBarButtonItem!
+    var profileButton: UIBarButtonItem!
     fileprivate let storiesCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
@@ -24,6 +26,13 @@ class StoriesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profileButton = UIBarButtonItem(image: #imageLiteral(resourceName: "profile"), style: .plain, target: self, action: #selector(goToProfile))
+        addStoryButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addStory))
+        
+        
+        navigationItem.leftBarButtonItem = profileButton
+        navigationItem.rightBarButtonItem = addStoryButton
         
         storiesCollectionView.register(StoryCollectionViewCell.self, forCellWithReuseIdentifier: storyCellIdentifier)
         storiesCollectionView.delegate = self
@@ -39,6 +48,15 @@ class StoriesVC: UIViewController {
         storiesCollectionView.leftAnchor.constraint(equalTo: layout.leftAnchor).isActive = true
         storiesCollectionView.rightAnchor.constraint(equalTo: layout.rightAnchor).isActive = true
         storiesCollectionView.bottomAnchor.constraint(equalTo: layout.bottomAnchor).isActive = true
+    }
+    
+    @objc
+    func addStory(){
+    
+    }
+    @objc
+    func goToProfile(){
+        navigationController?.pushViewController(ProfileVC(), animated: true)
     }
 
 }

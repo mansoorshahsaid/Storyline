@@ -84,8 +84,6 @@
 				894ED19A201CFD2E00506699 /* LaunchScreen.storyboard */,
 				894ED19D201CFD2E00506699 /* Info.plist */,
 				894ED195201CFD2E00506699 /* Storyline.xcdatamodeld */,
-				5101B8B2201D09CE006D38B9 /* ProfileVC.swift */,
-				5101B8B3201D09CE006D38B9 /* ProfileVC.xib */,
 			);
 			path = Storyline;
 			sourceTree = "<group>";
@@ -102,6 +100,7 @@
 		894ED1AA201D23FB00506699 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5101B8B3201D09CE006D38B9 /* ProfileVC.xib */,
 				92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */,
 			);
 			path = View;
@@ -110,6 +109,7 @@
 		894ED1AB201D240A00506699 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5101B8B2201D09CE006D38B9 /* ProfileVC.swift */,
 				894ED190201CFD2E00506699 /* SignInVC.swift */,
 				92C4DDBA201D01F600D74854 /* StoriesVC.swift */,
 			);
@@ -256,8 +256,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Storyline/Pods-Storyline-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
