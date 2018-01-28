@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import FirebaseDatabase
+class ProfileVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    
+    var stories = [StoryModel]()
+    
 
-class ProfileVC: UIViewController {
-
+    
+    @IBOutlet weak var storyTable: UICollectionView!
     @IBOutlet weak var ProfileStories: UITextField!
     @IBOutlet weak var ProfileUpvotes: UITextField!
     @IBOutlet weak var upImg: UIImageView!
     @IBOutlet weak var ProfileImg: UIImageView!
     @IBOutlet weak var ProfileName: UITextField!
+    let ref = Database.database().reference()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +40,28 @@ class ProfileVC: UIViewController {
         self.ProfileStories.text = String(currentUserStoryline.storiesCount)
         //self.upImg.image = UIImage(currentUserStoryline.imageUrl:currentUserStoryline.imageUrl)
         
+        storyTable.register(StoryCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        storyTable.dataSource=self
+        storyTable.delegate=self
+        
+        ref.child("stories").queryOrdered(byChild: "username").queryEqual(toValue: self.ProfileName.text).observe(.value) { (snapshot) in
+            self.stories.removeAll()
+            for child in snapshot.children.reversed() as! [DataSnapshot] {
+                let value = child.value as? [String: Any] ?? [:]
+                
+                let uuid = child.key
+                let name = value["name"] as? String ?? ""
+                let userImage = self.getImage(str: value["userImage"] as? String ?? "") ?? UIImage(named: "profile")
+                let userName = value["username"] as? String ?? ""
+                let upvotes = value["upvotes"] as? Int ?? 0
+                let storyStatus = value["isOpen"] as? Bool ?? true
+                
+                self.stories.append(StoryModel(uuid: uuid, name: name, userImage: userImage, userName: userName, storyStatus: storyStatus ? "Active" : "Closed", upvotes: upvotes))
+                
+                self.storyTable.reloadData()
+                
+            }
+        }
     }
     
     func setProfileImage(str: String){
@@ -44,8 +73,38 @@ class ProfileVC: UIViewController {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        self.ProfileStories.text = String(stories.count)
+        return stories.count
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! StoryCollectionViewCell
+        let story = stories[indexPath.item]
+        
+        cell.storyTitle.text = story.name
+        cell.personImageView.image = story.userImage
+        cell.nameLabel.text = story.userName
+        cell.storyTimeLabel.text = story.storyStatus
+        cell.upvoteLabel.text = "\(story.upvotes)"
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return CGSize(width: view.frame.width, height: view.frame.height * 0.2)
 
+    }
+    
+    func getImage(str: String) -> UIImage? {
+        
+        if let imageUrl = URL(string: str) {
+            let imagedata = try! Data(contentsOf: imageUrl)
+            
+            return UIImage(data: imagedata)
+        }
+        
+        return nil
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
