@@ -24,12 +24,28 @@ class ProfileVC: UIViewController {
         self.ProfileImg.layer.borderWidth = 1.0;
         self.ProfileImg.layer.borderColor = #colorLiteral(red: 0.009499914944, green: 0.00950041879, blue: 0.009500147775, alpha: 1);
         self.ProfileImg.clipsToBounds = true
-        ProfileName.text = "Shameiz Rangwala"
-        ProfileName.borderStyle = UITextBorderStyle.none
-        self.ProfileUpvotes.text = "25"
-        self.ProfileStories.text = "33"
-        // Do any additional setup after loading the view.
+        setProfileImage(str: currentUserStoryline.imageUrl)
+        
+        self.ProfileName.text = currentUserStoryline.name
+        self.ProfileName.borderStyle = UITextBorderStyle.none
+        
+        self.ProfileUpvotes.text = String(currentUserStoryline.upVoteCount)
+        self.ProfileStories.text = String(currentUserStoryline.storiesCount)
+        //self.upImg.image = UIImage(currentUserStoryline.imageUrl:currentUserStoryline.imageUrl)
+        
     }
+    
+    func setProfileImage(str:String){
+        guard let imageUrlString = currentUserStoryline.imageUrl else { return }
+        
+        if let imageUrl = URL(string: imageUrlString) {
+            let imagedata = try! Data(contentsOf: imageUrl)
+            
+            self.ProfileImg.image = UIImage(data: imagedata)
+        }
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

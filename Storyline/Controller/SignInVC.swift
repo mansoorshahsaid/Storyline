@@ -81,13 +81,13 @@ class SignInVC: UIViewController, FUIAuthDelegate {
                 self.ref.child("users").child(user.uid).setValue(["uid":uid, "name":name, "photoURL":photoURL, "storiesCount": storiesCount, "upVoteCount":upVoteCount])
                 currentUserStoryline = UserStoryline(uid: uid, imageUrl: photoURL, name: name, storiesCount: storiesCount, upVoteCount: upVoteCount)
             }
+            self.present(UINavigationController(rootViewController: StoriesVC()), animated: true, completion: nil)
             
             // ...
         }) { (error) in
             print(error.localizedDescription)
         }
         
-        self.present(UINavigationController(rootViewController: StoriesVC()), animated: true, completion: nil)
         
         
         
