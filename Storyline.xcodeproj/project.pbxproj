@@ -17,6 +17,11 @@
 		894ED1A4201CFD6400506699 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 894ED1A3201CFD6400506699 /* GoogleService-Info.plist */; };
 		894ED1A6201D079100506699 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED1A5201D079100506699 /* Global.swift */; };
 		894ED1A8201D23A300506699 /* UserStoryline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED1A7201D23A300506699 /* UserStoryline.swift */; };
+		894ED1B4201D6CB300506699 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED1B2201D6CB300506699 /* ChatVC.swift */; };
+		894ED1B5201D6CB300506699 /* ChatVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 894ED1B3201D6CB300506699 /* ChatVC.xib */; };
+		894ED1B8201D6DC600506699 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED1B6201D6DC600506699 /* ChatCell.swift */; };
+		894ED1B9201D6DC600506699 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 894ED1B7201D6DC600506699 /* ChatCell.xib */; };
+		894ED1BB201D788400506699 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED1BA201D788400506699 /* Message.swift */; };
 		92C4DDBB201D01F600D74854 /* StoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4DDBA201D01F600D74854 /* StoriesVC.swift */; };
 		92C4DDBD201D0B2E00D74854 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */; };
 		9AD96357E510E338FDDD512F /* Pods_Storyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828C8FC55BD0BC26BF7365F4 /* Pods_Storyline.framework */; };
@@ -37,6 +42,11 @@
 		894ED1A3201CFD6400506699 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		894ED1A5201D079100506699 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		894ED1A7201D23A300506699 /* UserStoryline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStoryline.swift; sourceTree = "<group>"; };
+		894ED1B2201D6CB300506699 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		894ED1B3201D6CB300506699 /* ChatVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatVC.xib; sourceTree = "<group>"; };
+		894ED1B6201D6DC600506699 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		894ED1B7201D6DC600506699 /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
+		894ED1BA201D788400506699 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		92C4DDBA201D01F600D74854 /* StoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesVC.swift; sourceTree = "<group>"; };
 		92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F90DCC76436E3CCFFE1E385F /* Pods-Storyline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storyline.release.xcconfig"; path = "Pods/Target Support Files/Pods-Storyline/Pods-Storyline.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +105,7 @@
 			children = (
 				894ED1A7201D23A300506699 /* UserStoryline.swift */,
 				894ED1A5201D079100506699 /* Global.swift */,
+				894ED1BA201D788400506699 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +113,8 @@
 		894ED1AA201D23FB00506699 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				894ED1B6201D6DC600506699 /* ChatCell.swift */,
+				894ED1B7201D6DC600506699 /* ChatCell.xib */,
 				92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */,
 			);
 			path = View;
@@ -112,6 +125,8 @@
 			children = (
 				894ED190201CFD2E00506699 /* SignInVC.swift */,
 				92C4DDBA201D01F600D74854 /* StoriesVC.swift */,
+				894ED1B2201D6CB300506699 /* ChatVC.swift */,
+				894ED1B3201D6CB300506699 /* ChatVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,8 +211,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5101B8B5201D09CE006D38B9 /* ProfileVC.xib in Resources */,
+				894ED1B9201D6DC600506699 /* ChatCell.xib in Resources */,
 				894ED19C201CFD2E00506699 /* LaunchScreen.storyboard in Resources */,
 				894ED199201CFD2E00506699 /* Assets.xcassets in Resources */,
+				894ED1B5201D6CB300506699 /* ChatVC.xib in Resources */,
 				894ED1A4201CFD6400506699 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,8 +273,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Storyline/Pods-Storyline-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -276,10 +293,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				894ED1B4201D6CB300506699 /* ChatVC.swift in Sources */,
 				5101B8B4201D09CE006D38B9 /* ProfileVC.swift in Sources */,
 				894ED1A8201D23A300506699 /* UserStoryline.swift in Sources */,
+				894ED1B8201D6DC600506699 /* ChatCell.swift in Sources */,
 				894ED1A6201D079100506699 /* Global.swift in Sources */,
 				92C4DDBD201D0B2E00D74854 /* StoryCollectionViewCell.swift in Sources */,
+				894ED1BB201D788400506699 /* Message.swift in Sources */,
 				894ED197201CFD2E00506699 /* Storyline.xcdatamodeld in Sources */,
 				894ED191201CFD2E00506699 /* SignInVC.swift in Sources */,
 				92C4DDBB201D01F600D74854 /* StoriesVC.swift in Sources */,
