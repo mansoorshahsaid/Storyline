@@ -52,7 +52,7 @@ class StoriesVC: UIViewController {
     
     @objc
     func addStory(){
-    
+    navigationController?.pushViewController(AddStoryVC(), animated: true)
     }
     @objc
     func goToProfile(){
