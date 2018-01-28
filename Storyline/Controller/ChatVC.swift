@@ -30,6 +30,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        
         buttonSend.backgroundColor = mainTextColor
         buttonSend.layer.cornerRadius = buttonSend.frame.height / 2
         
