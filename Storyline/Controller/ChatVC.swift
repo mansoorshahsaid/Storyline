@@ -103,7 +103,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
             
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! ChatCell
-            cell.setupViews(name: message.userName, profileUrl: message.pictureURL, message: message.message, bgColor: message.bgColor)
+            cell.setupViews(name: message.userName, profileUrl: message.pictureURL, message: message.message, bgColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1))
             return cell
         }
     }
