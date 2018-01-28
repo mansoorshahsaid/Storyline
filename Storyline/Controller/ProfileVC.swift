@@ -35,10 +35,9 @@ class ProfileVC: UIViewController {
         
     }
     
-    func setProfileImage(str:String){
-        guard let imageUrlString = currentUserStoryline.imageUrl else { return }
+    func setProfileImage(str: String){
         
-        if let imageUrl = URL(string: imageUrlString) {
+        if let imageUrl = URL(string: str) {
             let imagedata = try! Data(contentsOf: imageUrl)
             
             self.ProfileImg.image = UIImage(data: imagedata)

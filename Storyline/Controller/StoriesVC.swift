@@ -8,8 +8,20 @@
 
 import UIKit
 import Foundation
+import FirebaseDatabase
+
+struct StoryModel {
+    let uuid: String
+    let name: String
+    let userImage: UIImage?
+    let userName: String
+    let storyStatus: String
+    let upvotes: Int
+}
 
 class StoriesVC: UIViewController {
+    
+    var stories = [StoryModel]()
     
     fileprivate let storyCellIdentifier = "storyCell"
     var addStoryButton: UIBarButtonItem!
@@ -24,8 +36,29 @@ class StoriesVC: UIViewController {
         return scv
     }()
     
+    let ref = Database.database().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref.child("stories").queryOrdered(byChild: "upvotes").observe(.value) { [unowned self] (snapshot) in
+            self.stories.removeAll()
+            for child in snapshot.children.reversed() as! [DataSnapshot] {
+                let value = child.value as? [String: Any] ?? [:]
+                
+                let uuid = child.key
+                let name = value["name"] as? String ?? ""
+                let userImage = self.getImage(str: value["userImage"] as? String ?? "") ?? UIImage(named: "profile")
+                let userName = value["username"] as? String ?? ""
+                let upvotes = value["upvotes"] as? Int ?? 0
+                let storyStatus = value["isOpen"] as? Bool ?? true
+                
+                self.stories.append(StoryModel(uuid: uuid, name: name, userImage: userImage, userName: userName, storyStatus: storyStatus ? "Active" : "Closed", upvotes: upvotes))
+                
+                self.storiesCollectionView.reloadData()
+                print(self.stories)
+            }
+        }
         
         profileButton = UIBarButtonItem(image: #imageLiteral(resourceName: "profile"), style: .plain, target: self, action: #selector(goToProfile))
         addStoryButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addStory))
@@ -58,16 +91,34 @@ class StoriesVC: UIViewController {
     func goToProfile(){
         navigationController?.pushViewController(ProfileVC(), animated: true)
     }
+    
+    func getImage(str: String) -> UIImage? {
+        
+        if let imageUrl = URL(string: str) {
+            let imagedata = try! Data(contentsOf: imageUrl)
+            
+            return UIImage(data: imagedata)
+        }
+        
+        return nil
+    }
 
 }
 
 extension StoriesVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return stories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: storyCellIdentifier, for: indexPath) as! StoryCollectionViewCell
+        let story = stories[indexPath.item]
+        
+        cell.storyTitle.text = story.name
+        cell.personImageView.image = story.userImage
+        cell.nameLabel.text = story.userName
+        cell.storyTimeLabel.text = story.storyStatus
+        cell.upvoteLabel.text = "\(story.upvotes)"
         return cell
     }
     

@@ -27,13 +27,13 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSg-8e-cHe">
                     <rect key="frame" x="0.0" y="44" width="375" height="309"/>
-                    <color key="backgroundColor" red="0.90367200774350598" green="0.90744635024046538" blue="0.88808267258767071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.94194878472222221" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="309" id="X1v-gE-6IQ"/>
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="32259957991_c29788afff_o" translatesAutoresizingMaskIntoConstraints="NO" id="pNS-xZ-OhM">
-                    <rect key="frame" x="132.66666666666666" y="106" width="110" height="110"/>
+                    <rect key="frame" x="132.66666666666666" y="108" width="110" height="110"/>
                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="tintColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -42,13 +42,13 @@
                     </constraints>
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MC0-gH-Ler">
-                    <rect key="frame" x="173.66666666666666" y="248" width="28" height="39"/>
+                    <rect key="frame" x="173.66666666666666" y="234" width="28" height="39"/>
                     <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mcZ-kF-gJ8">
-                    <rect key="frame" x="119.66666666666669" y="303" width="136" height="22"/>
+                    <rect key="frame" x="119.66666666666669" y="289" width="136" height="22"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WJf-w4-A1B">
                             <rect key="frame" x="0.0" y="0.0" width="136" height="22"/>
@@ -91,12 +91,11 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="pNS-xZ-OhM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="62" id="ICX-2F-tuR"/>
-                <constraint firstItem="MC0-gH-Ler" firstAttribute="top" secondItem="pNS-xZ-OhM" secondAttribute="bottom" constant="32" id="PSg-ev-RyF"/>
+                <constraint firstItem="pNS-xZ-OhM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="64" id="ICX-2F-tuR"/>
+                <constraint firstItem="MC0-gH-Ler" firstAttribute="top" secondItem="pNS-xZ-OhM" secondAttribute="bottom" constant="16" id="PSg-ev-RyF"/>
                 <constraint firstItem="mcZ-kF-gJ8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="T23-Qz-IeZ"/>
                 <constraint firstItem="MC0-gH-Ler" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TAi-2i-YBs"/>
                 <constraint firstItem="nSg-8e-cHe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Zvr-7B-ivy"/>
-                <constraint firstItem="pNS-xZ-OhM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="62" id="hvG-tB-USg"/>
                 <constraint firstItem="pNS-xZ-OhM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jSi-8Z-fZf"/>
                 <constraint firstItem="nSg-8e-cHe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qnN-uD-7kP"/>
                 <constraint firstItem="mcZ-kF-gJ8" firstAttribute="top" secondItem="MC0-gH-Ler" secondAttribute="bottom" constant="16" id="voe-qa-ei4"/>
