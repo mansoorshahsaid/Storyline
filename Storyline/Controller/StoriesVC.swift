@@ -18,7 +18,7 @@ class StoriesVC: UIViewController {
         layout.minimumInteritemSpacing = 0
         let scv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         scv.translatesAutoresizingMaskIntoConstraints = false
-        scv.backgroundColor = .yellow
+        scv.backgroundColor = .white
         return scv
     }()
     
@@ -39,7 +39,6 @@ class StoriesVC: UIViewController {
         storiesCollectionView.leftAnchor.constraint(equalTo: layout.leftAnchor).isActive = true
         storiesCollectionView.rightAnchor.constraint(equalTo: layout.rightAnchor).isActive = true
         storiesCollectionView.bottomAnchor.constraint(equalTo: layout.bottomAnchor).isActive = true
-        
     }
 
 }
@@ -63,6 +62,6 @@ extension StoriesVC: UICollectionViewDelegate {
 
 extension StoriesVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 100)
+        return CGSize(width: view.frame.width, height: view.frame.height * 0.2)
     }
 }
