@@ -15,6 +15,8 @@
                 <outlet property="buttonSend" destination="zeo-M5-cIL" id="NO0-uM-n1l"/>
                 <outlet property="inputTextField" destination="WE6-My-AEL" id="CU8-V3-DcT"/>
                 <outlet property="tableView" destination="XoK-0J-Cth" id="LEe-kA-35O"/>
+                <outlet property="textfieldBottomConstraint" destination="ysK-d8-0I4" id="X9F-3b-iHd"/>
+                <outlet property="textfieldTopConstraint" destination="K7c-Eg-hnB" id="Oyx-vI-YOQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,6 +36,9 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WE6-My-AEL">
                     <rect key="frame" x="0.0" y="623" width="279" height="44"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="fq7-u8-NtV"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
@@ -58,9 +63,8 @@
                 <constraint firstItem="WE6-My-AEL" firstAttribute="top" secondItem="XoK-0J-Cth" secondAttribute="bottom" constant="8" id="AeZ-B6-gwT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zeo-M5-cIL" secondAttribute="trailing" constant="6" id="Gub-42-b7H"/>
                 <constraint firstItem="WE6-My-AEL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Je4-gE-BEH"/>
-                <constraint firstItem="zeo-M5-cIL" firstAttribute="top" secondItem="WE6-My-AEL" secondAttribute="bottom" constant="-44" id="K7c-Eg-hnB"/>
+                <constraint firstItem="zeo-M5-cIL" firstAttribute="top" secondItem="WE6-My-AEL" secondAttribute="top" id="K7c-Eg-hnB"/>
                 <constraint firstItem="XoK-0J-Cth" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QON-bJ-Cw9"/>
-                <constraint firstItem="XoK-0J-Cth" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-52" id="awx-2e-Y2i"/>
                 <constraint firstItem="XoK-0J-Cth" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bd5-L3-SQv"/>
                 <constraint firstItem="XoK-0J-Cth" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ddJ-Tv-N1N"/>
                 <constraint firstItem="zeo-M5-cIL" firstAttribute="leading" secondItem="WE6-My-AEL" secondAttribute="trailing" constant="8" id="gQS-PY-Bz4"/>
