@@ -27,6 +27,7 @@ class ChatPictureCell: UITableViewCell {
     
     func setupViews(profileName:String, profileImgURL:String, messageImgURL:String){
         profileNameLabel.text = profileName
+        profilePictureImgView.layer.cornerRadius = profilePictureImgView.frame.height / 2
         profilePictureImgView.sd_setImage(with: URL(string: profileImgURL), completed: nil)
         messagePictureImgView.sd_setImage(with: URL(string: messageImgURL), completed: nil)
     }

@@ -28,7 +28,7 @@ class ChatCell: UITableViewCell {
     
     func setupViews(name:String, profileUrl:String, message:String, bgColor:UIColor){
         self.profileNameLabel.text = name
-
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         profileImageView.sd_setImage(with: URL(string: profileUrl), completed: nil)
         messageLabel.text = message
         container.layer.cornerRadius = container.frame.height / 10
