@@ -54,7 +54,7 @@ class SignInVC: UIViewController, FUIAuthDelegate {
         authUI?.delegate = self
         let providers: [FUIAuthProvider] = [FUIGoogleAuth()]
         authUI?.providers = providers
-        
+        logoImgView.tintColor = .white
         let gradient = CAGradientLayer()
         gradient.frame = self.view.bounds
         gradient.colors = [

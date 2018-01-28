@@ -17,10 +17,28 @@ class AddStoryVC: UIViewController {
     
     var storyDelegate: GotoStoryDelegate?
     @IBOutlet weak var nameText: UITextField!
+    
+    let top = CALayer()
+    let bottom = CALayer()
+    
+    @IBOutlet weak var newStoryImage: UIImageView!
     let ref = Database.database().reference()
     override func viewDidLoad() {
         super.viewDidLoad()
         nameText.delegate = self
+        newStoryImage.tintColor = mainTextColor
+        
+//        let top = CALayer()
+        top.backgroundColor = secondaryTextColor.cgColor
+        
+        top.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: 1.0)
+        self.nameText.layer.addSublayer(top)
+        
+//        let bottom = CALayer()
+        bottom.backgroundColor = secondaryTextColor.cgColor
+        bottom.frame = CGRect(x: 0.0, y: self.nameText.frame.height - 1, width: self.view.frame.width, height: 1.0)
+        self.nameText.layer.addSublayer(bottom)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -34,6 +52,14 @@ class AddStoryVC: UIViewController {
             
         }
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        top.frame = CGRect(x: 0.0, y: 0.0, width: self.nameText.frame.width, height: 1.0)
+        bottom.frame = CGRect(x: 0.0, y: self.nameText.frame.height - 1, width: self.nameText.frame.width, height: 1.0)
+    }
+    
     @IBAction func addStory(_ sender: Any) {
         let uuid = UUID().uuidString
         ref.child("stories").child(uuid).setValue([

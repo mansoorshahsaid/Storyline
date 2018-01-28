@@ -9,6 +9,8 @@ target 'Storyline' do
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Google'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'SDWebImage', '~> 4.0'
 
   # Pods for Storyline
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ChatCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
@@ -27,9 +28,8 @@ class ChatCell: UITableViewCell {
     
     func setupViews(name:String, profileUrl:String, message:String, bgColor:UIColor){
         self.profileNameLabel.text = name
-        let url = URL(string: profileUrl)
-        let data = try? Data(contentsOf: url!)
-        profileImageView.image = UIImage(data: data!)
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
+        profileImageView.sd_setImage(with: URL(string: profileUrl), completed: nil)
         messageLabel.text = message
         container.layer.cornerRadius = container.frame.height / 10
         container.backgroundColor = bgColor
