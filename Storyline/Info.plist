@@ -50,5 +50,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>to use camera</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>to use library</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>to add to library</string>
+	<key>CFBundleDisplayName</key>
+	<string>Storyline</string>
 </dict>
 </plist>

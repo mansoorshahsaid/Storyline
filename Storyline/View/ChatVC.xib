@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatVC" customModule="Storyline" customModuleProvider="target">
             <connections>
                 <outlet property="buttonSend" destination="zeo-M5-cIL" id="NO0-uM-n1l"/>
+                <outlet property="cameraButton" destination="JVm-tr-5ab" id="dP1-fW-woq"/>
                 <outlet property="inputTextField" destination="WE6-My-AEL" id="CU8-V3-DcT"/>
                 <outlet property="tableView" destination="XoK-0J-Cth" id="LEe-kA-35O"/>
                 <outlet property="textfieldBottomConstraint" destination="ysK-d8-0I4" id="X9F-3b-iHd"/>
@@ -57,11 +58,24 @@
                         <action selector="sendAction:" destination="-1" eventType="touchUpInside" id="hSt-TV-XHf"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVm-tr-5ab">
+                    <rect key="frame" x="162" y="616" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="0TL-aB-jI7"/>
+                        <constraint firstAttribute="height" constant="45" id="oB9-y8-mhe"/>
+                    </constraints>
+                    <state key="normal" image="photo-camera"/>
+                    <connections>
+                        <action selector="takePicture:" destination="-1" eventType="touchUpInside" id="seM-Me-lCu"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="WE6-My-AEL" firstAttribute="top" secondItem="XoK-0J-Cth" secondAttribute="bottom" constant="8" id="AeZ-B6-gwT"/>
+                <constraint firstItem="JVm-tr-5ab" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-3" id="Cmo-hr-C1K"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zeo-M5-cIL" secondAttribute="trailing" constant="6" id="Gub-42-b7H"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JVm-tr-5ab" secondAttribute="bottom" constant="6" id="IH8-WH-NbC"/>
                 <constraint firstItem="WE6-My-AEL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Je4-gE-BEH"/>
                 <constraint firstItem="zeo-M5-cIL" firstAttribute="top" secondItem="WE6-My-AEL" secondAttribute="top" id="K7c-Eg-hnB"/>
                 <constraint firstItem="XoK-0J-Cth" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QON-bJ-Cw9"/>
@@ -74,4 +88,7 @@
             <point key="canvasLocation" x="33.5" y="151.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="photo-camera" width="32" height="32"/>
+    </resources>
 </document>
