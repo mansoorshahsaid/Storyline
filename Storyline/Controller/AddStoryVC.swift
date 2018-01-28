@@ -32,7 +32,7 @@ class AddStoryVC: UIViewController {
     @objc
     func addStory(){
         let uuid = UUID().uuidString
-        ref.child("stories").child(uuid).setValue(["name":nameText.text ?? "","uuid":uuid,"userid":currentUserStoryline.uid,"username":currentUserStoryline.name,"isOpen":true])
+        ref.child("stories").child(uuid).setValue(["name":nameText.text ?? "","uuid":uuid,"userid":currentUserStoryline.uid,"username":currentUserStoryline.name,"isOpen":true,"upvotes":0,"userimg":currentUserStoryline.imageUrl])
         
         
     }
