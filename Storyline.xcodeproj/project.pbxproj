@@ -11,8 +11,6 @@
 		5101B8B5201D09CE006D38B9 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5101B8B3201D09CE006D38B9 /* ProfileVC.xib */; };
 		5101B8B8201D8A6E006D38B9 /* AddStoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5101B8B6201D8A6E006D38B9 /* AddStoryVC.swift */; };
 		5101B8B9201D8A6E006D38B9 /* AddStoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5101B8B7201D8A6E006D38B9 /* AddStoryVC.xib */; };
-		517C3A36201DDB3D002629C2 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517C3A34201DDB3D002629C2 /* StoryCell.swift */; };
-		517C3A37201DDB3D002629C2 /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 517C3A35201DDB3D002629C2 /* StoryCell.xib */; };
 		894ED18F201CFD2E00506699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED18E201CFD2E00506699 /* AppDelegate.swift */; };
 		894ED191201CFD2E00506699 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED190201CFD2E00506699 /* SignInVC.swift */; };
 		894ED197201CFD2E00506699 /* Storyline.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 894ED195201CFD2E00506699 /* Storyline.xcdatamodeld */; };
@@ -36,8 +34,6 @@
 		5101B8B3201D09CE006D38B9 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		5101B8B6201D8A6E006D38B9 /* AddStoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoryVC.swift; sourceTree = "<group>"; };
 		5101B8B7201D8A6E006D38B9 /* AddStoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStoryVC.xib; sourceTree = "<group>"; };
-		517C3A34201DDB3D002629C2 /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
-		517C3A35201DDB3D002629C2 /* StoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
 		828C8FC55BD0BC26BF7365F4 /* Pods_Storyline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Storyline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A97123DE54BD2DE57A57B3 /* Pods-Storyline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storyline.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Storyline/Pods-Storyline.debug.xcconfig"; sourceTree = "<group>"; };
 		894ED18B201CFD2E00506699 /* Storyline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storyline.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,8 +121,6 @@
 				894ED1B6201D6DC600506699 /* ChatCell.swift */,
 				894ED1B7201D6DC600506699 /* ChatCell.xib */,
 				92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */,
-				517C3A34201DDB3D002629C2 /* StoryCell.swift */,
-				517C3A35201DDB3D002629C2 /* StoryCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,7 +223,6 @@
 				894ED1B5201D6CB300506699 /* ChatVC.xib in Resources */,
 				894ED1A4201CFD6400506699 /* GoogleService-Info.plist in Resources */,
 				5101B8B9201D8A6E006D38B9 /* AddStoryVC.xib in Resources */,
-				517C3A37201DDB3D002629C2 /* StoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +304,6 @@
 				5101B8B4201D09CE006D38B9 /* ProfileVC.swift in Sources */,
 				894ED1A8201D23A300506699 /* UserStoryline.swift in Sources */,
 				894ED1B8201D6DC600506699 /* ChatCell.swift in Sources */,
-				517C3A36201DDB3D002629C2 /* StoryCell.swift in Sources */,
 				894ED1A6201D079100506699 /* Global.swift in Sources */,
 				92C4DDBD201D0B2E00D74854 /* StoryCollectionViewCell.swift in Sources */,
 				5101B8B8201D8A6E006D38B9 /* AddStoryVC.swift in Sources */,
@@ -453,7 +445,7 @@
 				DEVELOPMENT_TEAM = QXLVEU7SE4;
 				INFOPLIST_FILE = Storyline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mansoorss.Storyline.test;
+				PRODUCT_BUNDLE_IDENTIFIER = mansoorss.Storyline.tst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -469,7 +461,7 @@
 				DEVELOPMENT_TEAM = QXLVEU7SE4;
 				INFOPLIST_FILE = Storyline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mansoorss.Storyline.test;
+				PRODUCT_BUNDLE_IDENTIFIER = mansoorss.Storyline.tst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

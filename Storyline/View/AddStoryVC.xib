@@ -35,17 +35,15 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRm-wO-jhY">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRm-wO-jhY">
                     <rect key="frame" x="330" y="44" width="37" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Done"/>
                     <connections>
                         <action selector="addStory:" destination="-1" eventType="touchUpInside" id="9Cx-pQ-Am4"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paG-v1-bFD">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paG-v1-bFD">
                     <rect key="frame" x="8" y="44" width="48" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Cancel"/>
                     <connections>
                         <action selector="cancel:" destination="-1" eventType="touchUpInside" id="fQC-Au-ap9"/>
@@ -63,12 +61,16 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Rn5-Fy-LrM" secondAttribute="trailing" id="DO2-h3-brL"/>
+                <constraint firstItem="paG-v1-bFD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="KNl-tu-7Kp"/>
                 <constraint firstItem="tdq-e9-Ral" firstAttribute="top" secondItem="qnP-Sv-CW3" secondAttribute="bottom" constant="16" id="M7S-4S-ThV"/>
                 <constraint firstItem="Rn5-Fy-LrM" firstAttribute="top" secondItem="tdq-e9-Ral" secondAttribute="bottom" constant="64" id="OLD-PC-7ee"/>
+                <constraint firstItem="paG-v1-bFD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OnG-Xy-XNl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YRm-wO-jhY" secondAttribute="trailing" constant="8" id="OsB-u9-ApF"/>
                 <constraint firstItem="qnP-Sv-CW3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QK2-36-bB5"/>
                 <constraint firstItem="tdq-e9-Ral" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SNb-jI-bVa"/>
                 <constraint firstItem="Rn5-Fy-LrM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hDN-7C-9w2"/>
                 <constraint firstItem="qnP-Sv-CW3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="64" id="lTA-1c-FmR"/>
+                <constraint firstItem="YRm-wO-jhY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="vQx-8X-cb2"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="39.5" y="127"/>

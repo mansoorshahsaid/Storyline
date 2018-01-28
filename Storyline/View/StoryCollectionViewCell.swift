@@ -16,6 +16,9 @@ class StoryCollectionViewCell: UICollectionViewCell {
         let st = UILabel()
         st.translatesAutoresizingMaskIntoConstraints = false
         st.text = "Walking in the Forest"
+        st.numberOfLines = 1
+        st.lineBreakMode = .byTruncatingTail
+        st.clipsToBounds = true
         st.font = UIFont.systemFont(ofSize: 28, weight: .bold)
         st.textColor = mainTextColor
         
@@ -95,6 +98,7 @@ class StoryCollectionViewCell: UICollectionViewCell {
         
         storyTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16).isActive = true
         storyTitle.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
+        storyTitle.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
         personImageView.leftAnchor.constraint(equalTo: storyTitle.leftAnchor).isActive = true
         personImageView.topAnchor.constraint(equalTo: storyTitle.bottomAnchor, constant: 8).isActive = true
         personImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.2).isActive = true
