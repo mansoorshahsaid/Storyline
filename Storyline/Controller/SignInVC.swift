@@ -17,18 +17,28 @@ class SignInVC: UIViewController, FUIAuthDelegate {
     let signInButton:UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = mainColor
-        view.setTitle("GET IN", for: .normal)
+        view.backgroundColor = mainTextColor
+        view.setTitle("Start Storytelling", for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
         view.addTarget(self, action: #selector(getIn), for: .touchUpInside)
         view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return view
     }()
     
+    let appName: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 48)
+        label.textColor = .white
+        label.text = "StoryLine"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
     let logoImgView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = #imageLiteral(resourceName: "vine-256-black")
+        view.image = UIImage(named: "logo")
         view.tintColor = mainColor
         view.contentMode = .scaleAspectFit
         return view
@@ -40,27 +50,42 @@ class SignInVC: UIViewController, FUIAuthDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         authUI?.delegate = self
         let providers: [FUIAuthProvider] = [FUIGoogleAuth()]
         authUI?.providers = providers
+        
+        let gradient = CAGradientLayer()
+        gradient.frame = self.view.bounds
+        gradient.colors = [
+            UIColor(red: 48.0 / 255.0, green: 35.0 / 255.0, blue: 174.0 / 255.0, alpha: 1.0).cgColor,
+            UIColor(red: 200.0 / 255.0, green: 109.0 / 255.0, blue: 215.0 / 255.0, alpha: 1.0).cgColor
+        ]
+        gradient.locations = [0.0, 1.0]
+        
+        view.layer.addSublayer(gradient)
+        
         setupViews()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     func setupViews(){
-        self.view.backgroundColor = UIColor.white
-        
         self.view.addSubview(logoImgView)
         logoImgView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         logoImgView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 40).isActive = true
         logoImgView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive = true
         logoImgView.heightAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive = true
+        
+        view.addSubview(appName)
+        appName.topAnchor.constraint(equalTo: logoImgView.bottomAnchor, constant: 16).isActive = true
+        appName.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
 
         
         self.view.addSubview(signInButton)
-        signInButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
-        signInButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive = true
-        signInButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40).isActive = true
+        signInButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
+        signInButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16).isActive = true
+        signInButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -64).isActive = true
         signInButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
         signInButton.setNeedsLayout()
         signInButton.layoutIfNeeded()
