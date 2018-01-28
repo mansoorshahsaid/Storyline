@@ -21,6 +21,16 @@ class SignInVC: UIViewController, FUIAuthDelegate {
         view.setTitle("Get in", for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
         view.addTarget(self, action: #selector(getIn), for: .touchUpInside)
+        view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        return view
+    }()
+    
+    let logoImgView: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.image = #imageLiteral(resourceName: "vine-256-black")
+        view.tintColor = mainColor
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -38,16 +48,28 @@ class SignInVC: UIViewController, FUIAuthDelegate {
     }
     
     func setupViews(){
+        self.view.backgroundColor = UIColor.white
+        
+        self.view.addSubview(logoImgView)
+        logoImgView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        logoImgView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 40).isActive = true
+        logoImgView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive = true
+        logoImgView.heightAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive = true
+
+        
         self.view.addSubview(signInButton)
-        signInButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        signInButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        signInButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
+        signInButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive = true
+        signInButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40).isActive = true
+        signInButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
+        signInButton.setNeedsLayout()
+        signInButton.layoutIfNeeded()
+        signInButton.layer.cornerRadius = signInButton.frame.height/2
     }
     
     @objc func getIn(){
         let authViewController = authUI!.authViewController()
         self.present(authViewController, animated: true, completion: nil)
-//        let auth = FUIAuth.defaultAuthUI()?.providers.first as! FUIGoogleAuth
-//        auth.signIn(withDefaultValue: "", presenting: self, completion: nil)
     }
     
     
