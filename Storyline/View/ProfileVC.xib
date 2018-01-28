@@ -39,7 +39,7 @@
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="KBD-ti-Kce">
-                            <rect key="frame" x="119.33333333333331" y="246" width="136" height="22"/>
+                            <rect key="frame" x="119.33333333333331" y="245" width="136" height="22"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up" translatesAutoresizingMaskIntoConstraints="NO" id="lw4-gu-KAF">
                                     <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
@@ -70,20 +70,19 @@
                             </subviews>
                         </stackView>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MC0-gH-Ler">
-                            <rect key="frame" x="173.33333333333334" y="194" width="28" height="39"/>
+                            <rect key="frame" x="173.33333333333334" y="190" width="28" height="39"/>
                             <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="29"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" red="0.94194878472222221" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="MC0-gH-Ler" firstAttribute="top" secondItem="pNS-xZ-OhM" secondAttribute="bottom" constant="20" id="3Ho-XS-HeG"/>
+                        <constraint firstItem="MC0-gH-Ler" firstAttribute="top" secondItem="pNS-xZ-OhM" secondAttribute="bottom" constant="16" id="3Ho-XS-HeG"/>
                         <constraint firstItem="MC0-gH-Ler" firstAttribute="centerX" secondItem="nSg-8e-cHe" secondAttribute="centerX" id="CZJ-uK-5g9"/>
                         <constraint firstAttribute="height" constant="309" id="X1v-gE-6IQ"/>
                         <constraint firstItem="pNS-xZ-OhM" firstAttribute="centerX" secondItem="nSg-8e-cHe" secondAttribute="centerX" id="Yf3-jJ-fAc"/>
                         <constraint firstItem="pNS-xZ-OhM" firstAttribute="top" secondItem="nSg-8e-cHe" secondAttribute="top" constant="64" id="d0h-sS-gFi"/>
-                        <constraint firstItem="KBD-ti-Kce" firstAttribute="top" secondItem="MC0-gH-Ler" secondAttribute="bottom" constant="13" id="g9c-QH-WlG"/>
+                        <constraint firstItem="KBD-ti-Kce" firstAttribute="top" secondItem="MC0-gH-Ler" secondAttribute="bottom" constant="16" id="g9c-QH-WlG"/>
                         <constraint firstItem="KBD-ti-Kce" firstAttribute="centerX" secondItem="nSg-8e-cHe" secondAttribute="centerX" id="vfu-b8-9Rx"/>
                     </constraints>
                 </view>

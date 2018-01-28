@@ -40,7 +40,10 @@ class StoriesVC: UIViewController, GotoStoryDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 200.0 / 255.0, green: 109.0 / 255.0, blue: 215.0 / 255.0, alpha: 1.0)
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        title = "Stories"
         ref.child("stories").queryOrdered(byChild: "upvotes").observe(.value) { [unowned self] (snapshot) in
             self.stories.removeAll()
             for child in snapshot.children.reversed() as! [DataSnapshot] {

@@ -24,12 +24,17 @@ class ProfileVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     let ref = Database.database().reference()
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Profile"
+        if let layout = storyTable.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.minimumLineSpacing = 0
+            layout.minimumInteritemSpacing = 0
+        }
         
         self.ProfileImg.layer.cornerRadius = self.ProfileImg.frame.size.width/2;
         //self.ProfileImg.layer.shadowColor = #colorLiteral(red: 0.009499914944, green: 0.00950041879, blue: 0.009500147775, alpha: 1)
         //self.ProfileImg.layer.shadowRadius = 30
         self.ProfileImg.layer.borderWidth = 1.0;
-        self.ProfileImg.layer.borderColor = #colorLiteral(red: 0.009499914944, green: 0.00950041879, blue: 0.009500147775, alpha: 1);
+        self.ProfileImg.layer.borderColor = UIColor(red: 238.0/255.0, green: 238.0/255.0, blue: 238.0/255.0, alpha: 1.0).cgColor
         self.ProfileImg.clipsToBounds = true
         setProfileImage(str: currentUserStoryline.imageUrl)
         
