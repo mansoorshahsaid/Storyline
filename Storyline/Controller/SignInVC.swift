@@ -18,7 +18,7 @@ class SignInVC: UIViewController, FUIAuthDelegate {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = mainColor
-        view.setTitle("Get in", for: .normal)
+        view.setTitle("GET IN", for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
         view.addTarget(self, action: #selector(getIn), for: .touchUpInside)
         view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
@@ -109,9 +109,6 @@ class SignInVC: UIViewController, FUIAuthDelegate {
         }) { (error) in
             print(error.localizedDescription)
         }
-        
-        
-        
         
     }
 
