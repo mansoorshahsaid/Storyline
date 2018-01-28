@@ -26,6 +26,8 @@
 		894ED1B8201D6DC600506699 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED1B6201D6DC600506699 /* ChatCell.swift */; };
 		894ED1B9201D6DC600506699 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 894ED1B7201D6DC600506699 /* ChatCell.xib */; };
 		894ED1BB201D788400506699 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED1BA201D788400506699 /* Message.swift */; };
+		894ED1BE201E19C200506699 /* ChatPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ED1BC201E19C200506699 /* ChatPictureCell.swift */; };
+		894ED1BF201E19C200506699 /* ChatPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 894ED1BD201E19C200506699 /* ChatPictureCell.xib */; };
 		92C4DDBB201D01F600D74854 /* StoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4DDBA201D01F600D74854 /* StoriesVC.swift */; };
 		92C4DDBD201D0B2E00D74854 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */; };
 		9AD96357E510E338FDDD512F /* Pods_Storyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828C8FC55BD0BC26BF7365F4 /* Pods_Storyline.framework */; };
@@ -55,6 +57,8 @@
 		894ED1B6201D6DC600506699 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		894ED1B7201D6DC600506699 /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
 		894ED1BA201D788400506699 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		894ED1BC201E19C200506699 /* ChatPictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPictureCell.swift; sourceTree = "<group>"; };
+		894ED1BD201E19C200506699 /* ChatPictureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatPictureCell.xib; sourceTree = "<group>"; };
 		92C4DDBA201D01F600D74854 /* StoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesVC.swift; sourceTree = "<group>"; };
 		92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F90DCC76436E3CCFFE1E385F /* Pods-Storyline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storyline.release.xcconfig"; path = "Pods/Target Support Files/Pods-Storyline/Pods-Storyline.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				894ED1B3201D6CB300506699 /* ChatVC.xib */,
 				894ED1B6201D6DC600506699 /* ChatCell.swift */,
 				894ED1B7201D6DC600506699 /* ChatCell.xib */,
+				894ED1BC201E19C200506699 /* ChatPictureCell.swift */,
+				894ED1BD201E19C200506699 /* ChatPictureCell.xib */,
 				92C4DDBC201D0B2E00D74854 /* StoryCollectionViewCell.swift */,
 				517C3A34201DDB3D002629C2 /* StoryCell.swift */,
 				517C3A35201DDB3D002629C2 /* StoryCell.xib */,
@@ -222,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				894ED1BF201E19C200506699 /* ChatPictureCell.xib in Resources */,
 				5101B8B5201D09CE006D38B9 /* ProfileVC.xib in Resources */,
 				894ED1B9201D6DC600506699 /* ChatCell.xib in Resources */,
 				894ED19C201CFD2E00506699 /* LaunchScreen.storyboard in Resources */,
@@ -264,6 +271,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -272,6 +280,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -287,8 +296,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Storyline/Pods-Storyline-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -312,6 +321,7 @@
 				894ED1A8201D23A300506699 /* UserStoryline.swift in Sources */,
 				894ED1B8201D6DC600506699 /* ChatCell.swift in Sources */,
 				517C3A36201DDB3D002629C2 /* StoryCell.swift in Sources */,
+				894ED1BE201E19C200506699 /* ChatPictureCell.swift in Sources */,
 				894ED1A6201D079100506699 /* Global.swift in Sources */,
 				92C4DDBD201D0B2E00D74854 /* StoryCollectionViewCell.swift in Sources */,
 				5101B8B8201D8A6E006D38B9 /* AddStoryVC.swift in Sources */,
