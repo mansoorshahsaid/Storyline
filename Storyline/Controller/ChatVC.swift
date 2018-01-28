@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var inputTextField: UITextView!
+    @IBOutlet weak var inputTextField: UITextView!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
     @IBOutlet weak var buttonSend: UIButton!
 
     @IBOutlet weak var textfieldBottomConstraint: NSLayoutConstraint!
@@ -20,6 +20,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     var messages = [Message]()
     let ref = Database.database().reference()
     var storyID:String!
+    var storyTitle:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         self.tableView.estimatedRowHeight = 100;
         
         self.inputTextField.delegate = self
+        self.title = storyTitle;
         
         ref.child("messages").child(storyID).observe(.childAdded) { (snapshot) in
             if let value = snapshot.value as? NSDictionary{

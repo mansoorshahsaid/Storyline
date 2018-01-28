@@ -94,9 +94,10 @@ class StoriesVC: UIViewController, GotoStoryDelegate {
         navigationController?.present(vc, animated: true)
     }
     
-    func goToStory(str:String) {
+    func goToStory(uid:String, title:String) {
         let cvc = ChatVC()
-        cvc.storyID = str;
+        cvc.storyID = uid;
+        cvc.storyTitle = title
         navigationController?.pushViewController(cvc, animated: true)
     }
     
@@ -138,8 +139,10 @@ extension StoriesVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let story = stories[indexPath.row]
         let storyId = story.uuid
+        let title = story.name
         let chatVC = ChatVC()
         chatVC.storyID = storyId
+        chatVC.storyTitle = title
         self.navigationController?.pushViewController(chatVC, animated: true)
         
     }

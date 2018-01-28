@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 
 protocol GotoStoryDelegate {
-    func goToStory(str:String)
+    func goToStory(uid:String, title:String)
 }
 
 class AddStoryVC: UIViewController {
@@ -49,7 +49,7 @@ class AddStoryVC: UIViewController {
         chatVC.storyID = uuid
         
         self.dismiss(animated: true) {
-            self.storyDelegate?.goToStory(str:uuid)
+            self.storyDelegate?.goToStory(uid:uuid,title: self.nameText.text!)
         }
         
     }
