@@ -34,6 +34,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         
         self.inputTextField.delegate = self
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "up"), style: .plain, target: self, action: #selector(upvote))
+        
         ref.child("messages").child(storyID).observe(.childAdded) { (snapshot) in
             if let value = snapshot.value as? NSDictionary{
                 var name = value["name"] as? String ?? ""
@@ -51,6 +53,18 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
                                                selector: #selector(self.keyboardNotification(notification:)),
                                                name: NSNotification.Name.UIKeyboardWillChangeFrame,
                                                object: nil)
+    }
+    
+    @objc
+    func upvote() {
+        ref.child("stories").child(storyID).child("upvotes").runTransactionBlock { (upvotes) -> TransactionResult in
+            if let totalVotes = upvotes.value as? Int {
+                upvotes.value = totalVotes + 1
+                
+            }
+            
+            return TransactionResult.success(withValue: upvotes)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

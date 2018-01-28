@@ -12,7 +12,11 @@ class ProfileVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     
     var stories = [StoryModel]()
-    
+    var totalUpvotes: Int = 0 {
+        didSet {
+            ProfileUpvotes.text = "\(totalUpvotes)"
+        }
+    }
 
     
     @IBOutlet weak var storyTable: UICollectionView!
@@ -51,6 +55,7 @@ class ProfileVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         
         ref.child("stories").queryOrdered(byChild: "username").queryEqual(toValue: self.ProfileName.text).observe(.value) { (snapshot) in
             self.stories.removeAll()
+            self.totalUpvotes = 0
             for child in snapshot.children.reversed() as! [DataSnapshot] {
                 let value = child.value as? [String: Any] ?? [:]
                 
@@ -59,6 +64,7 @@ class ProfileVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
                 let userImage = self.getImage(str: value["userImage"] as? String ?? "") ?? UIImage(named: "profile")
                 let userName = value["username"] as? String ?? ""
                 let upvotes = value["upvotes"] as? Int ?? 0
+                self.totalUpvotes += upvotes
                 let storyStatus = value["isOpen"] as? Bool ?? true
                 
                 self.stories.append(StoryModel(uuid: uuid, name: name, userImage: userImage, userName: userName, storyStatus: storyStatus ? "Active" : "Closed", upvotes: upvotes))
