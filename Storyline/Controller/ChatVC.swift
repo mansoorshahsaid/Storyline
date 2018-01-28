@@ -16,6 +16,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var messages = [Message]()
     let ref = Database.database().reference()
+    var storyID:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 100;
         
-        ref.child("messages").child("aaa").observe(.childAdded) { (snapshot) in
+        ref.child("messages").child(storyID).observe(.childAdded) { (snapshot) in
             if let value = snapshot.value as? NSDictionary{
                 var name = value["name"] as? String ?? ""
                 name = name.components(separatedBy: " ").first!
@@ -58,9 +59,9 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let name = currentUserStoryline.name
         let profileURL = currentUserStoryline.imageUrl
         let message = inputTextField.text
-        let storyID = "aaa"
+        let storyID = self.storyID
         
-        self.ref.child("messages").child("aaa").childByAutoId().setValue(["uid": uid, "name": name, "profileURL": profileURL, "message": message, "storyID": storyID])
+        self.ref.child("messages").child(storyID!).childByAutoId().setValue(["uid": uid, "name": name, "profileURL": profileURL, "message": message, "storyID": storyID])
         inputTextField.text = ""
     }
     

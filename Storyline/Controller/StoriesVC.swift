@@ -122,6 +122,15 @@ extension StoriesVC: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let story = stories[indexPath.row]
+        let storyId = story.uuid
+        let chatVC = ChatVC()
+        chatVC.storyID = storyId
+        self.navigationController?.pushViewController(chatVC, animated: true)
+        
+    }
+    
     
 }
 
