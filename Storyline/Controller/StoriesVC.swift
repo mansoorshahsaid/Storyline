@@ -19,7 +19,7 @@ struct StoryModel {
     let upvotes: Int
 }
 
-class StoriesVC: UIViewController {
+class StoriesVC: UIViewController, GotoStoryDelegate {
     
     var stories = [StoryModel]()
     
@@ -83,10 +83,20 @@ class StoriesVC: UIViewController {
         storiesCollectionView.bottomAnchor.constraint(equalTo: layout.bottomAnchor).isActive = true
     }
     
+    
     @objc
     func addStory(){
-    navigationController?.pushViewController(AddStoryVC(), animated: true)
+        let vc = AddStoryVC()
+        vc.storyDelegate = self
+        navigationController?.present(vc, animated: true)
     }
+    
+    func goToStory(str:String) {
+        let cvc = ChatVC()
+        cvc.storyID = str;
+        navigationController?.pushViewController(cvc, animated: true)
+    }
+    
     @objc
     func goToProfile(){
         navigationController?.pushViewController(ProfileVC(), animated: true)

@@ -64,6 +64,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         return cell
     }
 
+  
+    
     @IBAction func sendAction(_ sender: Any) {
         if (inputTextField.text == ""){
             return

@@ -9,14 +9,18 @@
 import UIKit
 import FirebaseDatabase
 
-class AddStoryVC: UIViewController {
+protocol GotoStoryDelegate {
+    func goToStory(str:String)
+}
 
+class AddStoryVC: UIViewController {
+    
+    var storyDelegate: GotoStoryDelegate?
     @IBOutlet weak var nameText: UITextField!
     let ref = Database.database().reference()
     override func viewDidLoad() {
         super.viewDidLoad()
         nameText.delegate = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(addStory))
         // Do any additional setup after loading the view.
     }
 
@@ -25,12 +29,12 @@ class AddStoryVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        nameText.resignFirstResponder()
+    @IBAction func cancel(_ sender: Any) {
+        self.dismiss(animated: true) {
+            
+        }
     }
-    
-    @objc
-    func addStory(){
+    @IBAction func addStory(_ sender: Any) {
         let uuid = UUID().uuidString
         ref.child("stories").child(uuid).setValue([
             "name": nameText.text ?? "",
@@ -40,11 +44,20 @@ class AddStoryVC: UIViewController {
             "userImage": currentUserStoryline.imageUrl,
             "upvotes": 0,
             "isOpen":true
-        ])
+            ])
+        let chatVC = ChatVC()
+        chatVC.storyID = uuid
         
+        self.dismiss(animated: true) {
+            self.storyDelegate?.goToStory(str:uuid)
+        }
         
     }
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        nameText.resignFirstResponder()
+    }
+    
     /*
     // MARK: - Navigation
 
