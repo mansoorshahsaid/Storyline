@@ -1,7 +1,7 @@
 # Storyline
 Create stories together - ConuHacks 3 hackathon project
 
-Devpost: https://devpost.com/software/storyline-40s7kf
+More info on Devpost: https://devpost.com/software/storyline-40s7kf
 
 Team: 
 
